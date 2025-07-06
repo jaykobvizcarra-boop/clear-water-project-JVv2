@@ -85,8 +85,9 @@ body, html {
 }
 
 /* Hero background image section */
+/* This puts the image behind the hero section, starting below the navbar and ending halfway down the page */
 .hero-bg {
-  background-image: url('the new hero image .png');
+  background-image: url('the new hero image .png'); /* Set the background image */
   background-size: cover;      /* Make the image fill the width */
   background-position: center top;
   background-repeat: no-repeat;
@@ -96,7 +97,7 @@ body, html {
   align-items: stretch;
 }
 
-/* Remove the old background from the hero section */
+/* Remove any background from the hero section itself */
 .hero {
   background: none;
   height: 100%;
