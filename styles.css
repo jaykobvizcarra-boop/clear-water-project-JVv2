@@ -62,28 +62,48 @@ body, html {
   color: #333;
 }
 
-/* Hero */
+/* Flexbox for navigation items */
+.nav-flex {
+  display: flex;                  /* Arrange items in a row */
+  align-items: center;            /* Vertically center items */
+  justify-content: space-between; /* Space between logo and the rest */
+}
+
+/* Make sure the logo stays at the far left */
+.logo {
+  margin-right: auto;             /* Pushes everything else to the right */
+}
+
+/* Make nav-links take up more space and align to the right */
+.nav-links {
+  flex: 1;                        /* Take up available space */
+  justify-content: flex-end;      /* Move links to the right */
+  gap: 2.5rem;                    /* Evenly space out the links */
+  display: flex;                  /* Already set, but here for clarity */
+  align-items: center;
+  margin-right: 1.5rem;           /* Add a little space before nav-buttons */
+}
+
+/* Hero background image section */
+.hero-bg {
+  background-image: url('the new hero image .png');
+  background-size: cover;      /* Make the image fill the width */
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50vh;                /* About half the page height */
+  display: flex;
+  align-items: stretch;
+}
+
+/* Remove the old background from the hero section */
 .hero {
-  background: url('hero-placeholder.jpg') center/cover no-repeat;
-  height: 70vh;
+  background: none;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-}
-.hero-overlay {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2rem;
-  text-align: center;
-  max-width: 500px;
-  border-radius: 8px;
-}
-.hero-overlay h1 {
-  margin-top: 0;
-  font-size: 2rem;
-}
-.hero-overlay p {
-  margin: 1rem 0;
 }
 
 /* Grid + CTA */
