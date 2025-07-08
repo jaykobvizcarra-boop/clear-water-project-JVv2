@@ -98,14 +98,12 @@ body, html {
 /* Style the hero image to be visible and responsive */
 /* The image is now in /img/the new hero image .png */
 .hero-img {
-  width: 40vw; /* Make the image take up about 40% of the width */
-  min-width: 220px; /* Don't let it get too small */
-  max-width: 400px; /* Don't let it get too big */
-  height: auto; /* Keep the image's aspect ratio */
-  display: block;
-  margin: 0 auto 1rem auto; /* Center the image and add space below */
-  border-radius: 10px; /* Rounded corners for a friendly look */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
+  width: 100%; /* Image fills the width of the page */
+  height: 50vh; /* Image fills half the viewport height */
+  object-fit: cover; /* Image covers the area without stretching */
+  display: block; /* Removes any extra space below the image */
+  margin: 0; /* No margin for full width */
+  /* No border-radius or box-shadow for a clean look */
 }
 
 /* Grid + CTA */
