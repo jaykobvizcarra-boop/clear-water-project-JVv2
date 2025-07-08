@@ -1,47 +1,60 @@
-/* styles.css */
+/* styles.css - Main stylesheet for Charity: Water Landing Page */
+
+/* This section sets up the default font, removes default margin/padding, and sets line height */
 body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  font-family: Arial, sans-serif; /* Sets the font for the whole page */
+  line-height: 1.5; /* Makes text easier to read */
 }
 
+/* This class centers the content and limits its width */
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 90%; /* Container takes up 90% of the page width */
+  max-width: 1200px; /* But never gets wider than 1200px */
+  margin: 0 auto; /* Centers the container horizontally */
 }
 
-/* Navigation */
+/* Navigation bar styles - controls the look of the top navbar */
 .navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  position: sticky;
+  background: #ffffff; /* White background */
+  border-bottom: 1px solid #e5e5e5; /* Thin line at the bottom */
+  position: sticky; /* Sticks to the top when scrolling */
   top: 0;
-  z-index: 100;
+  z-index: 100; /* Makes sure navbar stays above other content */
 }
+
+/* Logo styles - controls the look of the site name in the navbar */
 .navbar .logo {
   font-weight: bold;
   font-size: 1.2rem;
   color: #333;
   text-decoration: none;
 }
+
+/* Navigation links (Take Action, About Us, Why Water?) */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+  list-style: none; /* Removes bullet points */
+  display: flex; /* Arranges links in a row */
+  gap: 1rem; /* Space between links */
   margin: 0;
   padding: 0;
 }
+
+/* Style for each navigation link */
 .nav-links a {
   color: #333;
   text-decoration: none;
   font-weight: 500;
 }
+
+/* Styles for the Sign In and Give buttons in the navbar */
 .nav-buttons {
   display: flex;
   gap: 0.5rem;
 }
+
+/* General button styles */
 .btn {
   padding: 0.6rem 1.2rem;
   text-decoration: none;
@@ -49,80 +62,109 @@ body, html {
   font-weight: bold;
   font-size: 0.9rem;
 }
+
+/* Text button (Sign In) */
 .btn-text {
   background: none;
   color: #333;
 }
+
+/* Primary button (Give, Be The Change) */
 .btn-primary {
-  background: #FFC107;
-  color: #333;
-}
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.8);
+  background: #FFC107; /* Yellow background */
   color: #333;
 }
 
-/* Flexbox for navigation items */
+/* Secondary button (Join the Movement) */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  color: #333;
+}
+
+/* Flexbox for navigation items - arranges logo, links, and buttons in a row */
 .nav-flex {
-  display: flex;                  /* Arrange items in a row */
-  align-items: center;            /* Vertically center items */
+  display: flex; /* Row layout */
+  align-items: center; /* Vertically center items */
   justify-content: space-between; /* Space between logo and the rest */
 }
 
-/* Make sure the logo stays at the far left */
+/* Makes sure the logo stays at the far left */
 .logo {
-  margin-right: auto;             /* Pushes everything else to the right */
+  margin-right: auto; /* Pushes everything else to the right */
 }
 
-/* Make nav-links take up more space and align to the right */
+/* Makes nav-links take up more space and align to the right */
 .nav-links {
-  flex: 1;                        /* Take up available space */
-  justify-content: flex-end;      /* Move links to the right */
-  gap: 2.5rem;                    /* Evenly space out the links */
-  display: flex;                  /* Already set, but here for clarity */
+  flex: 1; /* Take up available space */
+  justify-content: flex-end; /* Move links to the right */
+  gap: 2.5rem; /* Evenly space out the links */
+  display: flex; /* Already set, but here for clarity */
   align-items: center;
-  margin-right: 1.5rem;           /* Add a little space before nav-buttons */
+  margin-right: 1.5rem; /* Add a little space before nav-buttons */
 }
 
-/* Hero background image section */
+/* Hero section - contains the big image and the main message */
 /* We do NOT use background images for the hero. Use an <img> tag in your HTML instead. */
 .hero-bg {
-  /* No background image here. The hero image is added in the HTML for beginners. */
-  background: none;
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  align-items: stretch;
+  position: relative; /* Allows absolute positioning of the hero text box inside */
+  width: 100%; /* Stretches the hero section across the page */
+  /* No background image, just the hero image in HTML */
 }
 
-/* Style the hero image to be visible and responsive */
-/* The image is now in /img/the new hero image .png */
+/* Hero image - stretches across the page and is tall */
 .hero-img {
   width: 100%; /* Image fills the width of the page */
-  height: 50vh; /* Image fills half the viewport height */
+  height: 90vh; /* Image is tall (90% of the viewport height) */
   object-fit: cover; /* Image covers the area without stretching */
-  display: block; /* Removes any extra space below the image */
-  margin: 0; /* No margin for full width */
-  /* No border-radius or box-shadow for a clean look */
+  display: block;
+  margin: 0;
 }
 
-/* Grid + CTA */
+/* The hero section overlays the image and lets us position the text box */
+.hero {
+  position: absolute; /* Allows us to place the hero text box over the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So only the content box is clickable */
+}
+
+/* The main message box in the hero section (top left corner) */
+.hero-content-box {
+  position: absolute;
+  top: 1.2rem;   /* About 1 inch from the top (1rem ≈ 16px) */
+  left: 1.2rem;  /* About 1 inch from the left */
+  max-width: 350px; /* Keep the box from getting too wide */
+  min-width: 220px;
+  margin: 0;
+  text-align: left;
+  pointer-events: auto; /* Make links and buttons clickable */
+}
+
+/* Grid + CTA section - contains extra images and a call to action at the bottom */
 .grid-cta {
-  background: #fff7e1;
+  background: #fff7e1; /* Light yellow background */
   padding: 4rem 0;
   text-align: center;
 }
+
+/* Grid container for images (not recommended for beginners, but here for reference) */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   margin-bottom: 2rem;
 }
+
+/* Each image in the grid */
 .grid-item img {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
+
+/* Call to action box at the bottom */
 .cta-box {
   max-width: 600px;
   margin: 0 auto;
@@ -134,7 +176,7 @@ body, html {
   margin: 1rem 0;
 }
 
-/* Footer */
+/* Footer styles - controls the look of the bottom of the page */
 .footer {
   background: #f5f5f5;
   padding: 1rem 0;
@@ -145,7 +187,7 @@ body, html {
   color: #777;
 }
 
-/* Slightly transparent box for headers and body text */
+/* Slightly transparent box for headers and body text (used in hero and CTA) */
 .content-box {
   background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
   padding: 1.5rem;
@@ -156,8 +198,7 @@ body, html {
   max-width: 100%;
 }
 
-/* Make the hero content box smaller and centered */
-/* This keeps the hero message and button in a small, centered box */
+/* Center the hero content box (not used in this layout, but left for reference) */
 .hero-content-box {
   max-width: 25vw;      /* About a quarter of the page width on large screens */
   min-width: 220px;     /* Make sure it's not too small on small screens */
@@ -165,8 +206,7 @@ body, html {
   text-align: center;   /* Center text and button inside */
 }
 
-/* Make the CTA content box smaller and centered */
-/* This keeps the CTA message and button in a small, centered box */
+/* Center the CTA content box (not used in this layout, but left for reference) */
 .cta-content-box {
   max-width: 25vw;      /* About a quarter of the page width on large screens */
   min-width: 220px;     /* Make sure it's not too small on small screens */
