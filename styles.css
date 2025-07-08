@@ -145,3 +145,32 @@ body, html {
   text-align: center;
   color: #777;
 }
+
+/* Slightly transparent box for headers and body text */
+.content-box {
+  background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Soft shadow for effect */
+  display: inline-block; /* Only as wide as content */
+  max-width: 100%;
+}
+
+/* Make the hero content box smaller and centered */
+/* This keeps the hero message and button in a small, centered box */
+.hero-content-box {
+  max-width: 25vw;      /* About a quarter of the page width on large screens */
+  min-width: 220px;     /* Make sure it's not too small on small screens */
+  margin: 0 auto;       /* Center the box */
+  text-align: center;   /* Center text and button inside */
+}
+
+/* Make the CTA content box smaller and centered */
+/* This keeps the CTA message and button in a small, centered box */
+.cta-content-box {
+  max-width: 25vw;      /* About a quarter of the page width on large screens */
+  min-width: 220px;     /* Make sure it's not too small on small screens */
+  margin: 0 auto;       /* Center the box */
+  text-align: center;   /* Center text and button inside */
+}
