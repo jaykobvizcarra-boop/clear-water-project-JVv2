@@ -85,26 +85,27 @@ body, html {
 }
 
 /* Hero background image section */
-/* This puts the image behind the hero section, starting below the navbar and ending halfway down the page */
+/* We do NOT use background images for the hero. Use an <img> tag in your HTML instead. */
 .hero-bg {
-  background-image: url('the new hero image .png'); /* Set the background image */
-  background-size: cover;      /* Make the image fill the width */
-  background-position: center top;
-  background-repeat: no-repeat;
+  /* No background image here. The hero image is added in the HTML for beginners. */
+  background: none;
   width: 100%;
-  height: 50vh;                /* About half the page height */
+  height: 50vh;
   display: flex;
   align-items: stretch;
 }
 
-/* Remove any background from the hero section itself */
-.hero {
-  background: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+/* Style the hero image to be visible and responsive */
+/* The image is now in /img/the new hero image .png */
+.hero-img {
+  width: 40vw; /* Make the image take up about 40% of the width */
+  min-width: 220px; /* Don't let it get too small */
+  max-width: 400px; /* Don't let it get too big */
+  height: auto; /* Keep the image's aspect ratio */
+  display: block;
+  margin: 0 auto 1rem auto; /* Center the image and add space below */
+  border-radius: 10px; /* Rounded corners for a friendly look */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
 }
 
 /* Grid + CTA */
