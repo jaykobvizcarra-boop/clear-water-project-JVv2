@@ -4,8 +4,13 @@
 body, html {
   margin: 0; /* Removes default margin */
   padding: 0; /* Removes default padding */
-  font-family: Arial, sans-serif; /* Sets the font for the whole page */
+  font-family: 'Proxima Nova', Arial, sans-serif; /* Default font for all text except special headings */
   line-height: 1.5; /* Makes text easier to read */
+}
+
+/* Use Georgia font for main headings in the hero and CTA sections */
+h1, h2 {
+  font-family: Georgia, serif; /* Headings use Georgia font */
 }
 
 /* This class centers the content and limits its width */
