@@ -52,23 +52,24 @@
   </div>
 
   <!-- Extra Section at the bottom with images and CTA -->
-  <section class="extra-content" style="background: #fed8c1;">
+  <section class="extra-content" style="background: #fed8c1; padding-bottom: 0;">
     <!-- Make the image row fill the whole width of the page -->
     <div class="simple-image-row" style="display: flex; width: 100vw; margin-left: calc(-1 * ((100vw - 100%) / 2));">
       <!-- Left image: fills the left third of the page, 2 inches shorter from the bottom -->
       <img src="img/supporting image left.png" alt="Supporting Left" style="width: 33.33vw; height: calc(100% - 576px); object-fit: cover; display: block; align-self: flex-start;">
-      <!-- Middle image: fills the middle third of the page -->
-      <img src="img/college kids.png" alt="College Kids" style="width: 33.33vw; height: 100%; object-fit: cover; display: block;">
+      <!-- Middle image: fills the middle third of the page, a little taller from the bottom -->
+      <img src="img/college kids.png" alt="College Kids" style="width: 33.33vw; height: calc(100% + 48px); object-fit: cover; display: block;">
       <!-- Right image: fills the right third of the page, 2 inches shorter from the bottom -->
       <img src="img/supporting image right.png" alt="Supporting Right" style="width: 33.33vw; height: calc(100% - 576px); object-fit: cover; display: block; align-self: flex-start;">
     </div>
     <!-- Moved header and body text below the middle image, styled like the hero section -->
     <div style="
       width: 33.33vw; /* Match the width of the middle image */
-      margin: 0 auto; /* Center horizontally under the middle image */
+      margin: 0 auto 0 auto; /* Center horizontally under the middle image */
       text-align: center;
       position: relative;
-      top: -29rem; /* Move up so the text meets the image above */
+      top: -27rem; /* Move up so the text meets the image above */
+      margin-bottom: -192px; /* Make the section 1 inch shorter without adding a pink section under the footer */
     ">
       <h1 style="font-family: Georgia, serif; font-size: 2.5rem; color: #1a1a1a; margin-bottom: 1.5rem; margin-top: 2rem;">Be The Change To Make A Change.</h1>
       <p style="font-family: 'Proxima Nova', Arial, sans-serif; font-size: 1.3rem; color: #1a1a1a; max-width: 90%; margin: 0 auto 2rem auto;">Students around the world unite! Our generation will be the ones to be the catalyst for change for access to clean water for all.</p>
