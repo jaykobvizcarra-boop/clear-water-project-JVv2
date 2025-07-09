@@ -16,11 +16,11 @@
       <a href="#" class="logo">
         <img src="img/charitywater_logo_horizontal_BlackText.png" alt="Charity: Water Logo" class="logo-img">
       </a>
-      <!-- Mobile menu button (shows only on small screens) -->
+      <!-- Mobile menu button (always on the far right in nav bar) -->
       <button class="menu-btn" aria-label="Open navigation menu">
         Menu
       </button>
-      <!-- Navigation links (all nav options go here for mobile popout) -->
+      <!-- All navigation links and buttons are now inside the menu for mobile -->
       <ul class="nav-links">
         <li><a href="#take-action">Take Action</a></li>
         <li><a href="#about">About Us</a></li>
@@ -28,25 +28,32 @@
         <li><a href="#signin" class="btn btn-text">Sign In</a></li>
         <li><a href="#give" class="btn btn-primary">Give</a></li>
       </ul>
-      <!-- Remove nav-buttons from here, they are now in nav-links for mobile -->
+      <!-- Remove nav-buttons div, as buttons are now in nav-links for all devices -->
     </div>
   </nav>
 
   <!-- Hero Background and Hero Section -->
   <div class="hero-bg">
     <!-- Hero image stretches across the top, just below the navbar -->
-    <img src="img/the new hero image .png" alt="Students helping with water" class="hero-img"><!-- Hero image fills width -->
+    <img src="img/the new hero image .png" alt="Students helping with water" class="hero-img">
     <!-- Add a 5 inch tall bar below the hero image -->
     <div style="width: 100%; height: 110px; background: #fff7e1;">
       <!-- This is a decorative bar. 1 inch ≈ 96px, so 5 inches ≈ 480px. -->
-    </div>
-    <!-- Hero Section overlays the image -->
-    <section class="hero" id="take-action">
-      <!-- The hero content box will be positioned in the top left corner over the image -->
-      <div class="content-box hero-content-box" style="border-radius: 0;"> <!-- Removed border-radius for sharp corners -->
+      <!-- Mobile-only hero content (hidden on desktop, shown on mobile) -->
+      <div class="hero-content-mobile" style="display: none;">
         <h1>The Water Crisis Ends With Us</h1>
         <p>Join a student-driven movement bringing clean water projects to communities in need around the world resulting in measurable impact.</p>
-        <!-- Add jerry can image about 2 inches to the left of the button -->
+        <div class="hero-btn-row">
+          <img src="img/jerry_can_black.png" alt="Jerry Can">
+          <a href="#join" class="btn btn-secondary">Join the Movement</a>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Section overlays the image (desktop only) -->
+    <section class="hero" id="take-action">
+      <div class="content-box hero-content-box" style="border-radius: 0;">
+        <h1>The Water Crisis Ends With Us</h1>
+        <p>Join a student-driven movement bringing clean water projects to communities in need around the world resulting in measurable impact.</p>
         <div style="display: flex; align-items: center; gap: 2rem;">
           <img src="img/jerry_can_black.png" alt="Jerry Can" style="height: 48px; width: auto; display: inline-block;">
           <a href="#join" class="btn btn-secondary" style="font-size: 1.1rem; padding: 0.8rem 1.5rem;">Join the Movement</a>
@@ -121,7 +128,5 @@
       });
     });
   </script>
-</body>
-</html>
 </body>
 </html>

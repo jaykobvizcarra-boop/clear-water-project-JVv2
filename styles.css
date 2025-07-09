@@ -276,7 +276,7 @@ h1, h2 {
     padding: 0 1%;
   }
 
-  /* Stack navbar items vertically */
+  /* Navbar: only logo (left) and menu button (right) are visible */
   .nav-flex {
     flex-direction: row;
     align-items: center;
@@ -284,7 +284,7 @@ h1, h2 {
     width: 100%;
   }
   .navbar .logo {
-    margin-right: 0.5rem;
+    margin-right: 0;
     height: 48px;
   }
   .logo-img {
@@ -292,25 +292,21 @@ h1, h2 {
     position: static;
     transform: none;
   }
-
-  /* Show nav-buttons (Sign In, Give) always on mobile */
-  .nav-buttons {
-    display: flex !important;
-    gap: 0.5rem;
-    margin-left: auto;
-  }
-
-  /* Show menu button on mobile */
   .menu-btn {
     display: block;
-    margin-left: 0.5rem;
+    margin-left: auto;
+  }
+  /* Hide nav-buttons on all mobile (they are now in nav-links) */
+  .nav-buttons {
+    display: none !important;
   }
 
-  /* Only show logo and menu button in navbar */
+  /* Nav links dropdown (all links/buttons inside) */
   .nav-links {
     display: none;
     position: absolute;
     top: 100%; /* Just below navbar */
+    right: 0;
     left: 0;
     width: 100%;
     background: #fff;
@@ -322,18 +318,9 @@ h1, h2 {
     margin: 0;
     border-bottom: 1px solid #e5e5e5;
   }
-
-  /* Hide nav-buttons on mobile (they are now in nav-links) */
-  .nav-buttons {
-    display: none !important;
-  }
-
-  /* Show nav-links dropdown when menu is open */
   .navbar.menu-open .nav-links {
     display: flex;
   }
-
-  /* Style nav links in dropdown for easy tapping */
   .nav-links li {
     width: 100%;
   }
@@ -348,7 +335,6 @@ h1, h2 {
   .nav-links a:last-child {
     border-bottom: none;
   }
-  /* Style for Sign In and Give buttons in dropdown */
   .nav-links .btn-text {
     background: none;
     color: #333;
@@ -363,81 +349,61 @@ h1, h2 {
     text-align: center;
   }
 
-  /* Hero image and section */
-  .hero-img {
-    height: 40vh; /* Shorter hero image on mobile */
-    min-height: 180px;
-  }
+  /* --- HERO SECTION CHANGES FOR MOBILE --- */
+  /* Hide the hero-content-box overlay on the image */
   .hero-content-box {
-    position: static;
-    max-width: 98vw;
-    min-width: 0;
-    margin: 1rem 0;
-    text-align: left;
-    padding: 1rem;
+    display: none;
   }
-  .hero-content-box h1 {
-    font-size: 1.5rem;
-  }
-  .hero-content-box p {
-    font-size: 1rem;
-  }
-
-  /* Decorative bar below hero image */
-  .hero-bg > div[style*="background: #fff7e1;"] {
-    height: 48px !important; /* Shorter bar on mobile */
-  }
-
-  /* Extra image row: stack images vertically */
-  .simple-image-row {
-    flex-direction: column !important;
-    width: 100% !important;
-    margin-left: 0 !important;
-  }
-  .simple-image-row img {
-    width: 100% !important;
-    height: auto !important;
-    align-self: stretch !important;
-  }
-
-  /* CTA text below images */
-  .extra-content > div[style*="width: 33.33vw;"] {
-    width: 96vw !important;
-    top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-top: 1rem !important;
-    position: static !important;
-  }
-  .extra-content h1 {
-    font-size: 1.3rem !important;
-    margin-top: 1rem !important;
-  }
-  .extra-content p {
-    font-size: 1rem !important;
-  }
-  .extra-content a {
-    font-size: 1rem !important;
-    padding: 0.7rem 1.2rem !important;
-    margin-top: 1rem !important;
-  }
-
-  /* Make the transparent content box and text scale down more on mobile */
-  .hero-content-box,
-  .content-box {
+  /* Move the hero content box into the #fff7e1 bar below the image */
+  .hero-bg .hero-content-mobile {
+    display: block;
+    background: rgba(255,255,255,0.8);
+    border-radius: 0;
+    margin: 0 auto;
     max-width: 95vw;
-    padding: 0.7rem;
-    font-size: 0.95rem;
+    padding: 1rem;
+    text-align: left;
+    position: static;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
-  .hero-content-box h1,
-  .extra-content h1 {
-    font-size: 1.1rem !important;
-    margin-bottom: 0.7rem !important;
-    margin-top: 0.7rem !important;
+  .hero-bg .hero-content-mobile h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    font-family: Georgia, serif;
   }
-  .hero-content-box p,
-  .extra-content p {
-    font-size: 0.95rem !important;
-    margin-bottom: 1rem !important;
+  .hero-bg .hero-content-mobile p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .hero-bg .hero-content-mobile .hero-btn-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-bg .hero-content-mobile img {
+    height: 36px;
+    width: auto;
+  }
+  .hero-bg .hero-content-mobile .btn-secondary {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  /* Make the #fff7e1 bar taller to fit the content */
+  .hero-bg > div[style*="background: #fff7e1;"] {
+    height: auto !important;
+    min-height: 220px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+
+  /* Hide the original hero-content-box overlay on mobile */
+  @media (max-width: 768px) {
+    .hero-content-box {
+      display: none !important;
+    }
   }
 }
 
