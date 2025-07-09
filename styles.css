@@ -253,3 +253,110 @@ h1, h2 {
   margin: 0 auto;       /* Center the box */
   text-align: center;   /* Center text and button inside */
 }
+
+/* --- Responsive styles for mobile devices --- */
+@media (max-width: 768px) {
+  /* Make the container take full width on small screens */
+  .container {
+    width: 98%;
+    max-width: 100%;
+    padding: 0 1%;
+  }
+
+  /* Stack navbar items vertically */
+  .nav-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .navbar .logo {
+    margin-bottom: 0.5rem;
+    height: 48px;
+  }
+  .logo-img {
+    height: 48px;
+    position: static;
+    transform: none;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-right: 0;
+    width: 100%;
+  }
+  .nav-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Hero image and section */
+  .hero-img {
+    height: 40vh; /* Shorter hero image on mobile */
+    min-height: 180px;
+  }
+  .hero-content-box {
+    position: static;
+    max-width: 98vw;
+    min-width: 0;
+    margin: 1rem 0;
+    text-align: left;
+    padding: 1rem;
+  }
+  .hero-content-box h1 {
+    font-size: 1.5rem;
+  }
+  .hero-content-box p {
+    font-size: 1rem;
+  }
+
+  /* Decorative bar below hero image */
+  .hero-bg > div[style*="background: #fff7e1;"] {
+    height: 48px !important; /* Shorter bar on mobile */
+  }
+
+  /* Extra image row: stack images vertically */
+  .simple-image-row {
+    flex-direction: column !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .simple-image-row img {
+    width: 100% !important;
+    height: auto !important;
+    align-self: stretch !important;
+  }
+
+  /* CTA text below images */
+  .extra-content > div[style*="width: 33.33vw;"] {
+    width: 96vw !important;
+    top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 1rem !important;
+    position: static !important;
+  }
+  .extra-content h1 {
+    font-size: 1.3rem !important;
+    margin-top: 1rem !important;
+  }
+  .extra-content p {
+    font-size: 1rem !important;
+  }
+  .extra-content a {
+    font-size: 1rem !important;
+    padding: 0.7rem 1.2rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Footer */
+  .footer .container {
+    width: 98%;
+    padding: 0 1%;
+  }
+  .footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- End responsive styles --- */
