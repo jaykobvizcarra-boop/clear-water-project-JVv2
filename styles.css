@@ -6,11 +6,13 @@ body, html {
   padding: 0; /* Removes default padding */
   font-family: 'Proxima Nova', Arial, sans-serif; /* Default font for all text except special headings */
   line-height: 1.5; /* Makes text easier to read */
+  color: #1a1a1a; /* Sets the default text color for the whole page */
 }
 
 /* Use Georgia font for main headings in the hero and CTA sections */
 h1, h2 {
   font-family: Georgia, serif; /* Headings use Georgia font */
+  color: #1a1a1a; /* Headings also use the same dark color */
 }
 
 /* This class centers the content and limits its width */
@@ -27,14 +29,29 @@ h1, h2 {
   position: sticky; /* Sticks to the top when scrolling */
   top: 0;
   z-index: 100; /* Makes sure navbar stays above other content */
+  min-height: 56px; /* Keep the navbar short */
+  padding-top: 4px; /* Less space above content */
+  padding-bottom: 4px; /* Less space below content */
 }
 
-/* Logo styles - controls the look of the site name in the navbar */
+/* Logo styles - controls the look of the logo image in the navbar */
 .navbar .logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #333;
-  text-decoration: none;
+  display: flex; /* Allows image to align nicely */
+  align-items: center; /* Vertically center the logo image */
+  margin-right: auto; /* Pushes everything else to the right */
+  height: 56px; /* Match the navbar height */
+  overflow: visible; /* Allow logo to overflow navbar if needed */
+  position: relative; /* So the logo can overflow above and below */
+  z-index: 101; /* Make sure logo stays above navbar background */
+}
+.logo-img {
+  height: 195px; /* Make the logo image much bigger than the navbar */
+  width: auto; /* Keeps the logo's aspect ratio */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* Center the logo vertically over the navbar */
 }
 
 /* Navigation links (Take Action, About Us, Why Water?) */
@@ -48,7 +65,7 @@ h1, h2 {
 
 /* Style for each navigation link */
 .nav-links a {
-  color: #333;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 500;
 }
@@ -138,8 +155,9 @@ h1, h2 {
 /* The main message box in the hero section (top left corner) */
 .hero-content-box {
   position: absolute;
-  top: 1.2rem;   /* About 1 inch from the top (1rem ≈ 16px) */
-  left: 1.2rem;  /* About 1 inch from the left */
+  /* Move the box about 3 inches from the top and 2 inches from the left */
+  top: 7rem;    /* About 3 inches from the top (1rem ≈ 16px, so 3rem ≈ 48px) */
+  left: 3rem;   /* About 2 inches from the left (2rem ≈ 32px) */
   max-width: 350px; /* Keep the box from getting too wide */
   min-width: 220px;
   margin: 0;
