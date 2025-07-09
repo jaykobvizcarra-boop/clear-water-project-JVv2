@@ -39,7 +39,7 @@
     <!-- Hero Section overlays the image -->
     <section class="hero" id="take-action">
       <!-- The hero content box will be positioned in the top left corner over the image -->
-      <div class="content-box hero-content-box">
+      <div class="content-box hero-content-box" style="border-radius: 0;"> <!-- Removed border-radius for sharp corners -->
         <h1>The Water Crisis Ends With Us</h1>
         <p>Join a student-driven movement bringing clean water projects to communities in need around the world resulting in measurable impact.</p>
         <!-- Add jerry can image about 2 inches to the left of the button -->
@@ -55,12 +55,12 @@
   <section class="extra-content" style="background: #fed8c1;">
     <!-- Make the image row fill the whole width of the page -->
     <div class="simple-image-row" style="display: flex; width: 100vw; margin-left: calc(-1 * ((100vw - 100%) / 2));">
-      <!-- Left image: fills the left third of the page -->
-      <img src="img/supporting image left.png" alt="Supporting Left" style="width: 33.33vw; height: 100%; object-fit: cover; display: block;">
+      <!-- Left image: fills the left third of the page, 2 inches shorter from the bottom -->
+      <img src="img/supporting image left.png" alt="Supporting Left" style="width: 33.33vw; height: calc(100% - 576px); object-fit: cover; display: block; align-self: flex-start;">
       <!-- Middle image: fills the middle third of the page -->
       <img src="img/college kids.png" alt="College Kids" style="width: 33.33vw; height: 100%; object-fit: cover; display: block;">
-      <!-- Right image: fills the right third of the page -->
-      <img src="img/supporting image right.png" alt="Supporting Right" style="width: 33.33vw; height: 100%; object-fit: cover; display: block;">
+      <!-- Right image: fills the right third of the page, 2 inches shorter from the bottom -->
+      <img src="img/supporting image right.png" alt="Supporting Right" style="width: 33.33vw; height: calc(100% - 576px); object-fit: cover; display: block; align-self: flex-start;">
     </div>
     <!-- Moved header and body text below the middle image, styled like the hero section -->
     <div style="
@@ -68,17 +68,33 @@
       margin: 0 auto; /* Center horizontally under the middle image */
       text-align: center;
       position: relative;
-      top: -2.5rem; /* Move up so the text meets the image above */
+      top: -29rem; /* Move up so the text meets the image above */
     ">
       <h1 style="font-family: Georgia, serif; font-size: 2.5rem; color: #1a1a1a; margin-bottom: 1.5rem; margin-top: 2rem;">Be The Change To Make A Change.</h1>
       <p style="font-family: 'Proxima Nova', Arial, sans-serif; font-size: 1.3rem; color: #1a1a1a; max-width: 90%; margin: 0 auto 2rem auto;">Students around the world unite! Our generation will be the ones to be the catalyst for change for access to clean water for all.</p>
+      <!-- Add a sharp-cornered yellow button below the body text -->
+      <a href="#be-the-change" style="
+        display: inline-block;
+        background: #ffc907;
+        color: #1a1a1a;
+        font-family: 'Proxima Nova', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 0; /* Sharp corners */
+        text-decoration: none;
+        margin-top: 1.5rem;
+        box-shadow: none;
+        cursor: pointer;
+      ">Be The Change</a>
     </div>
   </section>
 
   <!-- Footer (optional) -->
-  <footer class="footer">
+  <footer class="footer" style="background: #cbccd1; margin-top: 0; padding-top: 0; color: #a1a1a1;">
     <div class="container">
-      <p>&copy; 2025 Charity: Water. All rights reserved.</p>
+      <p style="color: #a1a1a1; margin: 0;">&copy; 2025 Charity: Water. All rights reserved.</p>
     </div>
   </footer>
 
