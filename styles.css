@@ -93,14 +93,20 @@ h1, h2 {
 
 /* Primary button (Give, Be The Change) */
 .btn-primary {
-  background: #FFC107; /* Yellow background */
+  background: #FFC907; /* Use the correct yellow hex code */
   color: #333;
 }
 
 /* Secondary button (Join the Movement) */
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  background: none; /* Remove background color */
   color: #333;
+  border: none; /* No border */
+  border-bottom: 3px solid #FFC907; /* Add yellow underline */
+  padding-bottom: 0.3rem; /* Add space for underline */
+  font-weight: bold;
+  transition: border-color 0.2s;
+  display: inline-block; /* Make underline only as wide as the text */
 }
 
 /* Flexbox for navigation items - arranges logo, links, and buttons in a row */
@@ -156,13 +162,24 @@ h1, h2 {
 .hero-content-box {
   position: absolute;
   /* Move the box about 3 inches from the top and 2 inches from the left */
-  top: 7rem;    /* About 3 inches from the top (1rem ≈ 16px, so 3rem ≈ 48px) */
-  left: 3rem;   /* About 2 inches from the left (2rem ≈ 32px) */
-  max-width: 350px; /* Keep the box from getting too wide */
+  top: 7rem;    /* About 3 inches from the top (1rem ≈ 16px, so 7rem ≈ 112px) */
+  left: 3rem;   /* About 2 inches from the left (3rem ≈ 48px) */
+  max-width: 800px; /* Make the box about 3 inches wider (1in ≈ 96px, so 3in ≈ 288px) */
   min-width: 220px;
   margin: 0;
   text-align: left;
   pointer-events: auto; /* Make links and buttons clickable */
+}
+
+/* Make the header and body text inside the hero-content-box bigger */
+.hero-content-box h1 {
+  font-size: 2.5rem; /* Bigger header text */
+  margin-bottom: 1.5rem; /* Add space below the header */
+}
+.hero-content-box p {
+  font-size: 1.3rem; /* Bigger body text */
+  margin-top: 0; /* Remove default margin above */
+  margin-bottom: 1.5rem; /* Add space below the body text if needed */
 }
 
 /* Grid + CTA section - contains extra images and a call to action at the bottom */
