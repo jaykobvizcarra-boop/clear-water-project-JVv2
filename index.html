@@ -16,6 +16,10 @@
       <a href="#" class="logo">
         <img src="img/charitywater_logo_horizontal_BlackText.png" alt="Charity: Water Logo" class="logo-img">
       </a>
+      <!-- Mobile menu button (shows only on small screens) -->
+      <button class="menu-btn" aria-label="Open navigation menu">
+        Menu
+      </button>
       <ul class="nav-links">
         <li><a href="#take-action">Take Action</a></li>
         <li><a href="#about">About Us</a></li>
@@ -99,5 +103,17 @@
     </div>
   </footer>
 
+  <!-- Add this script just before the closing </body> tag -->
+  <script>
+    // This script toggles the mobile menu open and closed
+    // It adds/removes the 'menu-open' class on the navbar
+    document.addEventListener('DOMContentLoaded', function() {
+      var menuBtn = document.querySelector('.menu-btn');
+      var navbar = document.querySelector('.navbar');
+      menuBtn.addEventListener('click', function() {
+        navbar.classList.toggle('menu-open');
+      });
+    });
+  </script>
 </body>
 </html>

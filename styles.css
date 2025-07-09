@@ -254,7 +254,21 @@ h1, h2 {
   text-align: center;   /* Center text and button inside */
 }
 
-/* --- Responsive styles for mobile devices --- */
+/* --- Mobile menu button styles --- */
+/* Hide the menu button on desktop */
+.menu-btn {
+  display: none; /* Hidden by default */
+  background: #FFC907; /* Yellow background */
+  color: #1a1a1a;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Show the menu button and hide nav links/buttons on mobile */
 @media (max-width: 768px) {
   /* Make the container take full width on small screens */
   .container {
@@ -289,6 +303,40 @@ h1, h2 {
     width: 100%;
     justify-content: flex-start;
     gap: 0.5rem;
+  }
+
+  /* Show the menu button */
+  .menu-btn {
+    display: block;
+  }
+
+  /* Hide nav links and buttons by default on mobile */
+  .nav-links,
+  .nav-buttons {
+    display: none;
+  }
+
+  /* Show nav links and buttons when menu is open */
+  .navbar.menu-open .nav-links,
+  .navbar.menu-open .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: static;
+    box-shadow: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+
+  /* Make sure nav links/buttons are easy to tap */
+  .navbar.menu-open .nav-links a,
+  .navbar.menu-open .nav-buttons a {
+    font-size: 1.1rem;
+    padding: 0.7rem 0.5rem;
+    width: 100%;
+    text-align: left;
   }
 
   /* Hero image and section */
@@ -349,13 +397,23 @@ h1, h2 {
     margin-top: 1rem !important;
   }
 
-  /* Footer */
-  .footer .container {
-    width: 98%;
-    padding: 0 1%;
+  /* Make the transparent content box and text scale down more on mobile */
+  .hero-content-box,
+  .content-box {
+    max-width: 95vw;
+    padding: 0.7rem;
+    font-size: 0.95rem;
   }
-  .footer p {
-    font-size: 0.9rem;
+  .hero-content-box h1,
+  .extra-content h1 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.7rem !important;
+    margin-top: 0.7rem !important;
+  }
+  .hero-content-box p,
+  .extra-content p {
+    font-size: 0.95rem !important;
+    margin-bottom: 1rem !important;
   }
 }
 
