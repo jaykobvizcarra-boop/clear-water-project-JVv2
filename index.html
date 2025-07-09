@@ -12,7 +12,7 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container nav-flex">
-      <!-- Replace text logo with image logo -->
+      <!-- Logo stays on the left -->
       <a href="#" class="logo">
         <img src="img/charitywater_logo_horizontal_BlackText.png" alt="Charity: Water Logo" class="logo-img">
       </a>
@@ -20,11 +20,13 @@
       <button class="menu-btn" aria-label="Open navigation menu">
         Menu
       </button>
+      <!-- Navigation links (these go in the dropdown on mobile) -->
       <ul class="nav-links">
         <li><a href="#take-action">Take Action</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#why-water">Why Water?</a></li>
       </ul>
+      <!-- Sign In and Give stay on the right, even on mobile -->
       <div class="nav-buttons">
         <a href="#signin" class="btn btn-text">Sign In</a>
         <a href="#give" class="btn btn-primary">Give</a>
@@ -112,6 +114,12 @@
       var navbar = document.querySelector('.navbar');
       menuBtn.addEventListener('click', function() {
         navbar.classList.toggle('menu-open');
+      });
+      // Optional: Close menu when a nav link is clicked (for better UX)
+      document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navbar.classList.remove('menu-open');
+        });
       });
     });
   </script>
