@@ -306,7 +306,7 @@ h1, h2 {
     margin-left: 0.5rem;
   }
 
-  /* Hide nav-links by default on mobile */
+  /* Only show logo and menu button in navbar */
   .nav-links {
     display: none;
     position: absolute;
@@ -321,6 +321,11 @@ h1, h2 {
     padding: 0.5rem 0;
     margin: 0;
     border-bottom: 1px solid #e5e5e5;
+  }
+
+  /* Hide nav-buttons on mobile (they are now in nav-links) */
+  .nav-buttons {
+    display: none !important;
   }
 
   /* Show nav-links dropdown when menu is open */
@@ -338,15 +343,24 @@ h1, h2 {
     padding: 0.8rem 1.5rem;
     font-size: 1.1rem;
     border-bottom: 1px solid #f0f0f0;
+    text-align: left;
   }
   .nav-links a:last-child {
     border-bottom: none;
   }
-
-  /* Adjust container for mobile nav */
-  .container.nav-flex {
-    flex-wrap: nowrap;
-    padding: 0 1%;
+  /* Style for Sign In and Give buttons in dropdown */
+  .nav-links .btn-text {
+    background: none;
+    color: #333;
+    font-weight: bold;
+  }
+  .nav-links .btn-primary {
+    background: #FFC907;
+    color: #333;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    text-align: center;
   }
 
   /* Hero image and section */
